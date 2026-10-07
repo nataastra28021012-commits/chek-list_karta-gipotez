@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чек-лист самодиагностики</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 20px;
+            background-color: white;
+        }
+        .survey-container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 30px;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #42A1A5;
+            color: white;
+            transform-origin: top;
+            animation: unfold 900ms cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        @keyframes unfold {
+            0% {
+                transform: scaleY(0);
+            }
+            80% {
+                transform: scaleY(1.1);
+            }
+            100% {
+                transform: scaleY(1);
+            }
+        }
+
+        h2 {
+           margin-bottom: 10px;
+           font-family: 'Inter', sans-serif;
+           font-size: 20px;
+        }
+        .instruction {
+            margin-bottom: 30px;
+            font-weight: bold;
+           font-size: 20px;
+        }
+        .statement {
+            margin-bottom: 35px;
+           font-size: 20px;
+        }
+        input[type="checkbox"] {
+           width: 20px;
+           height: 20px;
+        }
+
+        input[type="checkbox"]:checked {
+            accent-color: white;
+        }
+        button {
+            width: 7cm;
+            height: 1.5cm;
+            background-color: #86C039;
+            color: white;
+            border: 1px solid white;
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="showChecklist(this)">Проверить</button>
+    <div class="survey-container" style="display: none;">
+        <p class="instruction" style="text-align: left;">Отметь то, что ты узнал про карту гипотез:</p>
+        <form>
+            <div class="statement">
+                <label style="font-family: 'Inter', sans-serif; font-size: 20px;"><input type="checkbox"> Выступает базовым инструментом антихрупкой стратегии.</label>
+            </div>
+            <div class="statement">
+                <label style="font-family: 'Inter', sans-serif; font-size: 20px;"><input type="checkbox"> Превращает абстрактные «обещания» в проверяемые гипотезы с чёткими сигналами.</label>
+            </div>
+            <div class="statement">
+                <label style="font-family: 'Inter', sans-serif; font-size: 20px;"><input type="checkbox"> Даёт право на ошибку и ускоряет обучение команды.</label>
+            </div>
+            <div class="statement">
+                <label style="font-family: 'Inter', sans-serif; font-size: 20px;"><input type="checkbox"> Защищает от больших ставок вслепую: идеи проверяются малыми, недорогими шагами.</label>
+            </div>
+        </form>
+    </div>
+    <script>
+        function showChecklist(button) {
+            button.style.display = 'none';
+            document.querySelector('.survey-container').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
